@@ -91,5 +91,6 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<finalName>cicdDemo</finalName>
 	</build>
 </project>
