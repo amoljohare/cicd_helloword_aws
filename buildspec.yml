@@ -1,16 +1,14 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto11
   build:
     commands:
-      - mvn package
-      - sam package 
-        --template-file sam-template.yml 
-        --s3-bucket testbucketstorages 
-        --output-template-file packaged-template.yml
+      - echo Entered the build phase...
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Build completed successfully
 artifacts:
   files:
-    - packaged-template.yml
+    - target/cicdDemo.jar
+  discard-paths: yes
